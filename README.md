@@ -1,4 +1,4 @@
-# Book Directory Project
+# nodejs-structure-base
 
 ## Description
 
@@ -16,7 +16,7 @@ This is a project for managing a book directory. It includes features such as [l
 
    ```bash
    git clone https://github.com/taed13/nodejs-structure-base.git
-   cd book_directory
+   cd nodejs-structure-base
    ```
 
 2. Install dependencies in file requirements.txt:

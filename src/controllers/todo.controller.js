@@ -1,17 +1,28 @@
-const TodoService = require("../services/todo.service.js");
-const TodoController = {};
+const TodoModel = require("../models/todo.model");
 
-TodoController.getAllTodos = async (req, res) => {
-  try {
-    const todos = await TodoService.getAllTodos();
-    res.status(200).json({
-      todos,
-    });
-  } catch (error) {
-    res.status(400).json({
-      message: error.message,
-    });
+class TodoController {
+  async getAllTodos(req, res, next) {
+    try {
+      console.log("Calling getAllTodos controller");
+      const todos = await TodoModel.find({});
+      console.log("Result from find operation:", todos);
+
+      if (todos.length > 0) {
+        console.log("Todos received:", todos);
+        res.status(200).json({
+          todos,
+        });
+      } else {
+        console.log("No todos found");
+        res.status(404).json({
+          message: "Todos not found",
+        });
+      }
+    } catch (error) {
+      console.error("Error in getAllTodos controller:", error);
+      next(error); // Pass the error to the next middleware (error handler)
+    }
   }
-};
+}
 
-module.exports = TodoController;
+module.exports = new TodoController();

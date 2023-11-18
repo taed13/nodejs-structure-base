@@ -5,12 +5,14 @@ const router = express.Router();
 
 router.get("/", async (req, res) => {
   try {
-    // Gọi hàm xử lý từ controller và chờ kết quả
+    console.log("Calling getAllTodos route handler");
     const todos = await TodoController.getAllTodos();
-
-    // Gửi phản hồi về client với dữ liệu từ controller
-    res.json(todos);
+    console.log("Todos received:", todos);
+    res.status(200).json({
+      todos,
+    });
   } catch (error) {
+    console.error("Error in getAllTodos route handler:", error);
     res.status(500).json({
       message: "Internal Server Error",
       error: error.message,
@@ -18,4 +20,5 @@ router.get("/", async (req, res) => {
   }
 });
 
+router.get("/all", TodoController.getAllTodos);
 module.exports = router;

@@ -1,8 +1,8 @@
-const express = require("express");
 const todoRouter = require("./todo.routes");
 
-const apiRoute = express();
+function routes(app) {
+  console.log(app);
+  app.use("/todo", todoRouter);
+}
 
-apiRoute.use("/todo", todoRouter);
-
-module.exports = apiRoute;
+module.exports = routes;

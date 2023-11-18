@@ -16,23 +16,21 @@ const port = process.env.PORT || 1337;
 const isProduction = process.env.NODE_ENV === "production";
 const app = express();
 
-const routes = require("./src/routes/router");
+const routes = require("./src/routes/routes.js");
 
 app.use(helmet());
 app.use(cors());
 app.use(express.json());
 
 // Your API routes
-// app.use("/api", require("./src/routes/router"));
 
-routes(app);
-
-// Default route handlers
 app.get("/", (req, res) => {
   res.json({
-    message: "Hello world!",
+    message: "HOME ROUTER",
   });
 });
+
+routes(app);
 
 // // Error handling middleware
 // app.use((err, req, res, next) => {

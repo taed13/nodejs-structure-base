@@ -21,18 +21,6 @@ const connectDatabase = () => {
       console.log("Could not connect to the database. Exiting now...", err);
       process.exit();
     });
-
-  mongoose.connection.on("connected", () => {
-    console.log("Mongoose connected to the database");
-  });
-
-  mongoose.connection.on("error", (err) => {
-    console.error("Mongoose connection error:", err);
-  });
-
-  mongoose.connection.on("disconnected", () => {
-    console.warn("Mongoose disconnected from the database");
-  });
 };
 
 module.exports = connectDatabase;

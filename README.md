@@ -25,13 +25,23 @@ This is a project for managing a book directory. It includes features such as [l
    npm install
    ```
 
-3. Run the webpack build:
+3. Create file .env:
 
    ```bash
-   npm run run-webpack
+   touch .env
    ```
 
-4. Start the application:
+4. Add the following environment variables to the .env file:
+
+   ```bash
+   PORT=1337
+   MONGO_USER=your-mongo-user
+   MONGO_PASSWORD=your-mongo-password
+   MONGO_CLUSTER=your-mongo-cluster
+   MONGO_DATABASE=your-mongo-database
+   ```
+
+5. Start the application:
 
    ```bash
    npm start

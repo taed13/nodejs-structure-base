@@ -7,10 +7,7 @@
     "node": "18.x"
   },
   "scripts": {
-    "start": "node index.js",
-    "run-webpack": "rm -rf dist && webpack --mode development --config webpack.config.js",
-    "dev": "nodemon index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js"
   },
   "author": "",
   "license": "ISC",

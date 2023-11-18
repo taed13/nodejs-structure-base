@@ -14,4 +14,4 @@ TodoController.getAllTodos = async (req, res) => {
   }
 };
 
-export default TodoController;
+module.exports = TodoController;

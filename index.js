@@ -6,7 +6,8 @@ const dotenv = require("dotenv");
 const rfs = require("rotating-file-stream");
 const path = require("path");
 
-import connectDatabase from "./src/configs/db.config.js";
+// import connectDatabase from "./src/configs/db.config.js";
+const connectDatabase = require("./src/configs/db.config.js");
 
 dotenv.config();
 
@@ -29,7 +30,7 @@ app.use(
 app.use(cors());
 app.use(express.json());
 
-app.use("/api", require("./src/routes/router").default);
+app.use("/api", require("./src/routes/router"));
 app.get("/", (req, res) => {
   res.json({
     message: "Hello world!",

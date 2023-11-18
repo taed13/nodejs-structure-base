@@ -19,14 +19,6 @@ const app = express();
 
 app.use(helmet());
 
-const accessLogStream = rfs.createStream("access.log", {
-  interval: "1d",
-  path: path.join(__dirname, "log"),
-});
-app.use(
-  isProduction ? morgan("combined", { stream: accessLogStream }) : morgan("dev")
-);
-
 app.use(cors());
 app.use(express.json());
 

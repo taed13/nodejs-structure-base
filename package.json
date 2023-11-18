@@ -3,9 +3,12 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "engines": {
+    "node": "14.x"
+  },
   "scripts": {
     "start": "node ./dist/bundle.js",
-    "run-webpack": "rm -rf dist && npm install -y && webpack --mode development --config webpack.config.js",
+    "run-webpack": "rm -rf dist && webpack --mode development --config webpack.config.js",
     "dev": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

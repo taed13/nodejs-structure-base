@@ -2,7 +2,9 @@ services:
   - type: web
     name: my-node-app
     buildCommand: "npm install && npm run run-webpack"
-    startCommand: "npm start"
+    startCommand: "node ./dist/bundle.js"
+    runtime: node
+    root: ./src # Thay đổi thành đúng đường dẫn root của bạn nếu nó không phải là ./ (ví dụ: ./src)
     envVars:
       - key: NODE_ENV
         value: production

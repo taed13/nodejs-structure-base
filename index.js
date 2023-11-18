@@ -28,11 +28,11 @@ app.use(express.json());
 routes(app);
 
 // Default route handlers
-// app.get("/", (req, res) => {
-//   res.json({
-//     message: "Hello world!",
-//   });
-// });
+app.get("/", (req, res) => {
+  res.json({
+    message: "Hello world!",
+  });
+});
 
 // // Error handling middleware
 // app.use((err, req, res, next) => {
